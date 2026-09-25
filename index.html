@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Third Monthsary, My Love ♡</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="single-page">
+  <!-- =========================================================
+       ONE SINGLE-PAGE EXPERIENCE
+       Cover → Letter → Memories → Cover
+       ========================================================= -->
+
+  <main id="app" aria-live="polite">
+    <!-- ==================== COVER ==================== -->
+    <section class="scene cover-scene active" id="coverScene" aria-label="Our anniversary cover">
+      <div class="soft-glow glow-one"></div>
+      <div class="soft-glow glow-two"></div>
+
+      <div class="flower-field" aria-hidden="true">
+        <img class="flower f1" src="assets/flowers/flower1.png" alt="" />
+        <img class="flower f2" src="assets/flowers/flower2.png" alt="" />
+        <img class="flower f3" src="assets/flowers/flower3.png" alt="" />
+        <img class="flower f4" src="assets/flowers/flower4.png" alt="" />
+        <img class="flower f5" src="assets/flowers/flower5.png" alt="" />
+        <img class="flower f6" src="assets/flowers/flower6.png" alt="" />
+        <img class="flower f7" src="assets/flowers/flower7.png" alt="" />
+        <img class="flower f8" src="assets/flowers/flower8.png" alt="" />
+        <img class="flower f9" src="assets/flowers/flower1.png" alt="" />
+        <img class="flower f10" src="assets/flowers/flower3.png" alt="" />
+        <img class="flower f11" src="assets/flowers/flower5.png" alt="" />
+        <img class="flower f12" src="assets/flowers/flower7.png" alt="" />
+      </div>
+
+      <section class="cover-message" id="coverMessage">
+        <p class="eyebrow">A little love letter made just for you</p>
+        <h1>Happy Third Monthsary</h1>
+        <p class="subtitle">My Love</p>
+        <p class="initials">R <span>+</span> L</p>
+        <p class="hint">There is something waiting for you inside ♡</p>
+      </section>
+
+      <button class="envelope-wrap" id="openEnvelope" type="button" aria-label="Open our love letter">
+        <span class="envelope-shadow"></span>
+        <span class="envelope">
+          <span class="envelope-back"></span>
+          <span class="envelope-paper"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-front"></span>
+          <span class="seal">R + L</span>
+        </span>
+        <span class="open-text">Open me</span>
+      </button>
+
+      <p class="tiny-footer">Made with love ♡</p>
+    </section>
+
+    <!-- ==================== LETTER ==================== -->
+    <section class="scene letter-scene scene-letter" id="letterScene" aria-label="Our love letter" aria-hidden="true">
+      <div class="table-texture" aria-hidden="true"></div>
+
+      <img class="corner-flower flower-left" src="assets/flowers/flower2.png" alt="" aria-hidden="true" />
+      <img class="corner-flower flower-right" src="assets/flowers/flower6.png" alt="" aria-hidden="true" />
+
+      <section class="paper-shell" aria-label="Our love letter">
+        <div class="paper-holes" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="paper-inner">
+          <p class="letter-heading">To my beautiful wife,</p>
+
+          <textarea id="loveLetter" spellcheck="true" aria-label="Type your love letter here" placeholder="Start writing your letter here...\n\nYou can write as much as you want. This page will scroll while you type. ♡"></textarea>
+
+          <div class="signature-area">
+            <p>Forever yours,</p>
+            <p class="signature">R + L ♡</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="page-controls">
+        <button class="nav-button previous" id="letterPrevious" type="button">← Previous</button>
+        <span class="save-status" id="saveStatus">Your letter saves automatically</span>
+        <button class="nav-button next" id="letterNext" type="button">Next →</button>
+      </div>
+    </section>
+
+    <!-- ==================== MEMORIES ==================== -->
+    <section class="scene memories-scene" id="memoriesScene" aria-label="Our memories" aria-hidden="true">
+      <div class="memory-bg-shape shape-a"></div>
+      <div class="memory-bg-shape shape-b"></div>
+
+      <header class="memory-heading">
+        <p class="eyebrow">Three months, countless little moments</p>
+        <h1>Our Memories</h1>
+        <p>Replace the placeholder pictures below with your favorite photos of us.</p>
+      </header>
+
+      <section class="photo-collage" aria-label="Memory photo collage">
+        <figure class="polaroid p1"><img src="assets/memories/memory1.jpg" alt="Memory 1" /><figcaption>Our beginning ♡</figcaption></figure>
+        <figure class="polaroid p2"><img src="assets/memories/memory2.jpg" alt="Memory 2" /><figcaption>That smile</figcaption></figure>
+        <figure class="polaroid p3"><img src="assets/memories/memory3.jpg" alt="Memory 3" /><figcaption>Little adventures</figcaption></figure>
+        <figure class="polaroid p4"><img src="assets/memories/memory4.jpg" alt="Memory 4" /><figcaption>Us</figcaption></figure>
+        <figure class="polaroid p5"><img src="assets/memories/memory5.jpg" alt="Memory 5" /><figcaption>My favorite person</figcaption></figure>
+        <figure class="polaroid p6"><img src="assets/memories/memory6.jpg" alt="Memory 6" /><figcaption>Always you</figcaption></figure>
+        <figure class="polaroid p7"><img src="assets/memories/memory7.jpg" alt="Memory 7" /><figcaption>One more smile</figcaption></figure>
+        <figure class="polaroid p8"><img src="assets/memories/memory8.jpg" alt="Memory 8" /><figcaption>Our little world</figcaption></figure>
+        <figure class="polaroid p9"><img src="assets/memories/memory9.jpg" alt="Memory 9" /><figcaption>More to come...</figcaption></figure>
+      </section>
+
+      <p class="memory-note">And this is only the beginning. ♡</p>
+
+      <div class="page-controls">
+        <button class="nav-button previous" id="memoriesPrevious" type="button">← Previous</button>
+        <span class="save-status">Three months down. So many more ahead.</span>
+        <button class="nav-button next close-button" id="closeStory" type="button">Close with love →</button>
+      </div>
+
+      <div class="closing-overlay" id="closingOverlay" aria-hidden="true">
+        <div class="closing-message">Closing our little story... ♡</div>
+        <div class="envelope closing-envelope" aria-hidden="true">
+          <span class="envelope-back"></span>
+          <span class="envelope-paper"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-front"></span>
+          <span class="seal">R + L</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- One audio element lives for the entire lifetime of the site. -->
+  <audio id="backgroundMusic" src="assets/music/our-song.mp3" preload="auto" loop></audio>
+
+  <div class="music-player" aria-label="Background music controls">
+    <button class="music-button" id="musicPlay" type="button" aria-label="Play music">♫</button>
+    <input class="music-volume" id="musicVolume" type="range" min="0" max="1" step="0.01" value="0.45" aria-label="Music volume" />
+    <button class="music-button music-mute" id="musicMute" type="button" aria-label="Mute music">🔊</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
