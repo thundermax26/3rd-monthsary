@@ -294,3 +294,29 @@ a { color: inherit; }
   .music-volume { width: 72px; }
   .music-button { width: 32px; height: 32px; }
 }
+/* Music seek/progress control */
+
+.music-seek {
+  width: 150px;
+  accent-color: #d96b87;
+  cursor: pointer;
+}
+
+.music-time {
+  min-width: 75px;
+  font-size: 0.72rem;
+  color: #6b4553;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .music-seek {
+    width: 90px;
+  }
+
+  .music-time {
+    min-width: 62px;
+    font-size: 0.65rem;
+  }
+}
