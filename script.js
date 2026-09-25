@@ -196,10 +196,12 @@ Your loving baby`;
   });
 
   /* ---------- Background music ---------- */
-  const audio = document.getElementById('backgroundMusic');
-  const playButton = document.getElementById('musicPlay');
-  const volumeSlider = document.getElementById('musicVolume');
-  const muteButton = document.getElementById('musicMute');
+const audio = document.getElementById('backgroundMusic');
+const playButton = document.getElementById('musicPlay');
+const volumeSlider = document.getElementById('musicVolume');
+const muteButton = document.getElementById('musicMute');
+const seekSlider = document.getElementById('musicSeek');
+const musicTime = document.getElementById('musicTime');
 
   const MUSIC_KEY = 'rl-third-monthsary-music';
   let musicState = {};
@@ -258,8 +260,25 @@ Your loving baby`;
     }
 
     if (volumeSlider) volumeSlider.value = audio.volume;
-  }
+  if (seekSlider && audio && Number.isFinite(audio.duration)) {
+  seekSlider.max = audio.duration;
+  seekSlider.value = audio.currentTime;
+}
 
+if (musicTime && audio) {
+  const formatTime = (seconds) => {
+    if (!Number.isFinite(seconds)) return '0:00';
+
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+
+    return `${minutes}:${String(secs).padStart(2, '0')}`;
+  };
+
+  musicTime.textContent =
+    `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+}
+  }
   window.startMusic = async function startMusic() {
     if (!audio) return;
     try {
@@ -298,9 +317,27 @@ Your loving baby`;
     updateMusicControls();
   });
 
+seekSlider?.addEventListener('input', () => {
+  if (!audio) return;
+  audio.currentTime = Number(seekSlider.value);
+  updateMusicControls();
+});
+  
   audio?.addEventListener('timeupdate', saveMusicState);
   audio?.addEventListener('play', updateMusicControls);
   audio?.addEventListener('pause', updateMusicControls);
+  audio?.addEventListener('loadedmetadata', () => {
+  if (!audio) return;
+
+  if (seekSlider) {
+    seekSlider.max = audio.duration || 0;
+    seekSlider.value = audio.currentTime || 0;
+  }
+
+  updateMusicControls();
+});
+
+audio?.addEventListener('timeupdate', updateMusicControls);
   window.addEventListener('pagehide', saveMusicState);
 
   updateMusicControls();
